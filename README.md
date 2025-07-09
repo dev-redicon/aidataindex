@@ -27,7 +27,7 @@ The system consists of a series of modular files, each with a specific function:
 | `index.json`             | Semantic parallel homepage of the website, containing a map of contents and links readable by AI |
 | `category.json`          | Structure of categories and tags to help AI understand relationships between contents |
 | `page.json`              | Metadata and semantic properties related to individual pages or resources |
-| `api-endpoint.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
+| `index.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
 | `llms.txt`               | Placed in the site's root (like `robots.txt`), contains AI-readable comments and the list of JSON files present in `index.json`. |
 | `sitemap-ai.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
 | `robots.txt`             | Crawling and indexing rules optimized for AI and traditional crawlers |
