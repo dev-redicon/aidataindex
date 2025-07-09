@@ -27,6 +27,7 @@ To implement **AI Data Index** on your website, structure your files under your 
 ├── json/
 │ ├── index.json
 │ ├── index.php
+│ ├── sitemap-ai.xml
 │ ├── category.json
 │ ├── product/
 │ │ ├── product-1.json
@@ -51,12 +52,12 @@ The system consists of a series of modular files, each with a specific function:
 
 | File / Resource         | Function |
 |--------------------------|----------|
-| `index.json`             | Semantic parallel homepage of the website, containing a map of contents and links readable by AI |
-| `category.json`          | Structure of categories and tags to help AI understand relationships between contents |
-| `page.json`              | Metadata and semantic properties related to individual pages or resources |
-| `index.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
+| `json/index.json`             | Semantic parallel homepage of the website, containing a map of contents and links readable by AI |
+| `json/category.json`          | Structure of categories and tags to help AI understand relationships between contents |
+| `json/page.json`              | Metadata and semantic properties related to individual pages or resources |
+| `json/index.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
+| `json/sitemap-ai.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
 | `llms.txt`               | Placed in the site's root (like `robots.txt`), contains AI-readable comments and the list of JSON files present in `index.json`. |
-| `sitemap-ai.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
 | `robots.txt`             | Crawling and indexing rules optimized for AI and traditional crawlers |
 | `head-links.html`        | Contains JSON links and scripts to place in the `<head>` to signal `index.json` to AI, facilitating structured data detection |
 | `body-links.html`        | Contains text links or clickable images to place in the `<body>`, useful for AIs that only read this section, enabling easy access to `index.json` |
