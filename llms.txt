@@ -1,0 +1,6 @@
+# llms.txt - AI index of machine-readable structured content
+
+https://www.example.com/json/index.json
+https://www.example.com/json/about-us.json
+https://www.example.com/json/services.json
+https://www.example.com/json/contacts.json
