@@ -1,0 +1,31 @@
+#Allow all bots to access the rest of the site
+
+User-agent: *
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /json/index.json
+
+User-agent: Google-Extended
+Allow: /json/index.json
+
+User-agent: Claude-Web
+Allow: /json/index.json
+
+User-agent: PerplexityBot
+Allow: /json/index.json
+
+User-agent: SoraBot
+Allow: /json/index.json
+
+User-agent: GPTBot
+Allow: /json/index.json
+
+User-agent: Anthropic-AI
+Allow: /json/index.json
+
+# AI-specific structured data entry points
+Sitemap: https://www.example.com/json/sitemap-ai.xml
+AI-Data: https://www.example.com/json/index.json
+AI-API Data: https://www.example.com/json/index.php
+AI-LLM: https://www.example.com/llms.txt
