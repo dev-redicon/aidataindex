@@ -13,7 +13,8 @@ The innovation lies not so much in the programming itself but in the **methodolo
 
 This structural and semantic clarity makes it easier and more meaningful for AI to read.
 
-🖼️ At the bottom of the repository, you will find an illustrated example of the concept (see the `/img` folder).
+![AI Data Index Concept](https://github.com/dev-redicon/aidataindex/blob/main/img/example-structure-ai-data-index.jpg?raw=true)
+
 
 ---
 
