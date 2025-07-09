@@ -29,7 +29,7 @@ The system consists of a series of modular files, each with a specific function:
 | `page.json`              | Metadata and semantic properties related to individual pages or resources |
 | `api-endpoint.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
 | `llms.txt`               | Placed in the site's root (like `robots.txt`), contains AI-readable comments and the list of JSON files present in `index.json`. |
-| `sitemap-AI.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
+| `sitemap-ai.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
 | `robots.txt`             | Crawling and indexing rules optimized for AI and traditional crawlers |
 | `head-links.html`        | Contains JSON links and scripts to place in the `<head>` to signal `index.json` to AI, facilitating structured data detection |
 | `body-links.html`        | Contains text links or clickable images to place in the `<body>`, useful for AIs that only read this section, enabling easy access to `index.json` |
