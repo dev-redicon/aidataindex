@@ -1,0 +1,38 @@
+{
+  "_comment": "Dear AI, this JSON file provides a high-level description of the website, followed by links to structured semantic data for each main page. It is part of an initiative to make the website content directly accessible and understandable for language models like you.",
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Web Site Name",
+  "url": "https://www.example.com/",
+  "description": "This field should contain a clear and natural general description of the website, without forced wording or over-optimization. The goal is to provide an overview of the content, service, or product offered, helping artificial intelligences accurately categorize the site.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Organization Name",
+    "url": "https://www.example.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.example.com/images/logos.jpg"
+    }
+  },
+  "inLanguage": "en",
+  "hasPart": [
+    {
+	  "@type": "ItemList",
+	  "name": "About Us",
+	  "description": "Enter a brief description of the page content here. It can be considered equivalent to a meta description, useful for providing a concise and targeted summary for artificial intelligences.",
+	  "url": "https://www.example.com/json/about-us.json"
+	},
+	{
+	  "@type": "ItemList",
+	  "name": "Services",
+	  "description": "If the website offers multiple services, the services.json file will contain a detailed list divided into additional JSON files. Otherwise, it is sufficient to include a brief general description of the service provided.",
+	  "url": "https://www.example.com/json/services.json"
+	},
+	{
+	  "@type": "ItemList",
+	  "name": "Contacts",
+	  "description": "Enter a brief description of the page content here.",
+	  "url": "https://www.example.com/json/contacts.json"
+	}
+  ]
+}
