@@ -1,0 +1,17 @@
+{
+    "name": "Services",
+    "hasPart": [
+        {
+            "name": "Name of service one",
+            "url": "https://www.example.com/json/services/name-of-service-one.json"
+        },
+        {
+            "name": "Name of service two",
+            "url": "https://www.example.com/json/services/name-of-service-one.two"
+        },
+        {
+            "name": "Name of service three",
+            "url": "https://www.example.com/json/services/name-of-service-three.json"
+        }
+    ]
+}
