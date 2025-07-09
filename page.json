@@ -1,0 +1,77 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Product Name",
+      "description": "Product description",
+      "image": [
+        "https://www.example.com/images/product.jpg"
+      ],
+      "brand": {
+        "@type": "Organization",
+        "name": "Neme brand",
+        "url": "https://www.example.com/"
+      },
+      "url": "https://www.example.com/url-product/",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "EUR",
+        "url": "https://www.example.com/url-product/"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Company Name"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Sku",
+          "value": "123abc"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Value 1",
+          "value": "123"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Value 2",
+          "value": "ABC"
+        }
+      ],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Write a FAQ question here",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write the answer to the question here"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Write a FAQ question here",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write the answer to the question here"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Write a FAQ question here",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Write the answer to the question here"
+          }
+        }
+      ],
+      "inLanguage": "en"
+    }
+  ]
+}
