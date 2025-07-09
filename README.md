@@ -18,6 +18,33 @@ This structural and semantic clarity makes it easier and more meaningful for AI 
 
 ---
 
+
+## 🛠️ How to Use
+
+To implement **AI Data Index** on your website, structure your files under your site's public folder (commonly named `public_html`, `www`, or the **root of your web server**), like this:
+```
+/ (🌐 root or public_html)
+├── json/
+│ ├── index.json
+│ ├── index.php
+│ ├── category.json
+│ ├── product/
+│ │ ├── product-1.json
+│ │ └── product-2.json
+│ ├── news/
+│ │ ├── news-1.json
+│ │ └── news-2.json
+│ └── page.json
+├── llms.txt
+├── robots.txt
+├── head-links.html
+└── body-links.html
+```
+This structure allows **artificial intelligences and agents** to efficiently locate and interpret your structured data, enabling **fast, clear, and accurate indexing** of your website’s content.
+
+
+---
+
 ## 📂 Project Structure
 
 The system consists of a series of modular files, each with a specific function:
