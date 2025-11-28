@@ -5,6 +5,7 @@
       "@type": "Product",
       "name": "Product Name",
       "description": "Product description",
+      "disambiguatingDescription": "product term definition",
       "image": [
         "https://www.example.com/images/product.jpg"
       ],
