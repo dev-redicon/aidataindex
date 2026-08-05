@@ -1,13 +1,6 @@
-# AI Data Index
+# llms.txt - AI index of machine-readable structured content
 
-> AI Data Index is a practical convention for publishing machine-readable website content through a structured JSON manifest and related discovery signals.
-
-## Structured Data
-
-- [AI Data Index manifest](https://aidataindex.org/json/index.json): Main JSON manifest describing this website and its AI-readable content structure.
-- [Multilingual convention](https://aidataindex.org/#m_multilingual): Documentation for multilingual manifests and canonical multilingual entity files.
-- [Agent setup Markdown](https://aidataindex.org/ai-data-index-agent-setup.md): Platform-neutral operational instructions for AI agents and assistants such as Codex, ChatGPT, Gemini, Claude, Perplexity, and other LLM-based tools that need to generate an AI Data Index integration.
-
-## Website
-
-- [Homepage](https://aidataindex.org/): Human-readable documentation for the AI Data Index protocol.
+https://www.example.com/json/index.json
+https://www.example.com/json/about-us.json
+https://www.example.com/json/services.json
+https://www.example.com/json/contacts.json

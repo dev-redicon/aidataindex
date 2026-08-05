@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.example.com/json/index.json</loc>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/about-us.json</loc>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/services.json</loc>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/contacts.json</loc>
+  </url>
+  <url>
+    <loc>ttps://www.example.com/json/services/name-of-service-one.json</loc>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/services/name-of-service-one.two</loc>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/services/name-of-service-three.json</loc>
+  </url>
+</urlset>
