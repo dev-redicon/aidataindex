@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Data Index</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="description" content="AI Data Index is a new structured method to make website data easily interpretable by artificial intelligences, leveraging AEO to enhance online visibility." />
+<link rel="stylesheet" href="css/style.css">
+<link rel="alternate" type="application/json" href="https://aidataindex.org/json/index.json" title="AI Manifest v1.1">
+<script type="application/json" id="ai-manifest" data-ai="true">
+  {
+    "manifest_url": "https://aidataindex.org/json/index.json"
+  }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9CGJXN48N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F9CGJXN48N', {
+    'storage': 'none',
+    'client_storage': 'none'
+  });
+</script>
+</head>
+<body>
+<header>
+<h1>AI Data Index</h1>
+</header>
+<nav id="nav" aria-label="Main menu">Main menu:
+<ul>
+<li><a href="#m_what">What is</a></li>
+<li><a href="#m_integration">Integration</a>
+<ul>
+<li class="sub"><a href="#m_json">JSON</a></li>
+<li class="sub"><a href="#m_multilingual">Multilingual</a></li>
+<li class="sub"><a href="#m_api">API</a></li>
+<li class="sub"><a href="#m_llms">llms.txt</a></li>
+<li class="sub"><a href="#m_sitemap">sitemap-AI.xml</a></li>
+<li class="sub"><a href="#m_robots">robots.txt</a></li>
+<li class="sub"><a href="#m_links">Links</a></li>
+</ul>
+</li>
+<li><a href="#m_agent_setup">Agent setup (.md)</a></li>
+<li><a href="#m_examples">Integration examples</a></li>
+<li><a href="https://github.com/dev-redicon/aidataindex" target="_blank">GitHub</a></li>
+</ul>
+</nav>
+<main>
+<section id="m_what">
+<h2>What is AI Data Index</h2>
+<p>AI Data Index is an innovative system designed to simplify and optimize the way artificial intelligences collect and interpret information within a website.</p>
+<p>By leveraging established protocols such as JSON and JSON-LD, this system makes data available in a clear, structured, and unambiguous format. This not only allows AI to achieve a more accurate understanding but also significantly improves the speed at which information is processed, ensuring faster and more effective responses.</p>
+<p>The innovation lies not so much in the programming as in the method: a parallel website specifically designed to be accessed by artificial intelligences rather than humans.</p>
+<p>Below is an illustrated example to help better understand the concept.</p>
+<p><img src="images/example-structure-ai-data-index.jpg" alt="example structure ai data index" class="imageHalf"></p>
+<p>At this stage, this system should be considered an open and practical convention rather than an officially adopted standard. The goal is to make these informational structures easy for AI systems, agents, and crawlers to recognize, retrieve, and interpret with minimal ambiguity.</p>
+<p>The widespread integration of this system across a large number of websites will inevitably make it visible and recognizable to artificial intelligences. Furthermore, this very website aims to provide information directly to AI by adopting — in addition to the methods described below — a structure specifically designed to be easily interpreted by them.</p>
+<p>This system is also leveraged for advanced indexing and positioning techniques within artificial intelligences, an area now known as SEO-AI and AEO (Answer Engine Optimization). By structuring data clearly and semantically, content becomes more easily accessible and interpretable not only by traditional search engines but also by artificial intelligence algorithms that analyze and provide answers to users. In this way, the information published on the website can surface more prominently within AI-generated responses, ensuring greater visibility and a more effective distribution of content in an ecosystem increasingly oriented toward interaction between humans and artificial intelligence. The use of AEO thus becomes a strategic lever for positioning content within AI responses, anticipating the future of online visibility.</p>
+</section>
+<section id="m_integration">
+<h2>AI Data Index Integration</h2>
+<p>The process consists of several phases, ranging from the creation of structured JSON data to its signaling through links, robots.txt files, llms.txt, APIs, and sitemaps. Below, we analyze each step in detail.</p>
+<p>In the future, the trend will be to simplify the integration process as much as possible by relying solely on the robots.txt file.</p>
+<pre>
+/ (root or public_html)
+├── json/
+│ ├── index.json
+│ ├── index.php
+│ ├── sitemap-ai.xml
+│ ├── category.json
+│ ├── product/
+│ │ ├── product-1.json
+│ │ └── product-2.json
+│ ├── news/
+│ │ ├── news-1.json
+│ │ └── news-2.json
+│ └── page.json
+├── llms.txt
+├── robots.txt
+├── head-links.html
+└── body-links.html
+</pre>
+</section>
+<section id="m_json">
+<h2>Structured data: json</h2>
+<p>The goal is to create a “parallel website” consisting of structured data, organized within the <span class="fontCode">/json/</span> folder, to ensure order and cleanliness in the project structure.</p>
+<p>Within this folder, the <span class="fontCode">index.json</span> file will be created, containing the main information of the website along with links to secondary JSON files.</p>
+<p>AI Data Index uses two complementary formats. Manifests, indexes, lists, navigation files, and paginated archives should use a simple AI Data Index JSON format. Final entities such as pages, services, products, articles, local businesses, people, and FAQs should use JSON-LD with <a href="https://schema.org/" target="_blank">Schema.org</a>.</p>
+<p>Every JSON file should use the same baseline markers whenever possible: <span class="fontCode">aiDataIndexVersion</span>, <span class="fontCode">format</span>, <span class="fontCode">type</span> or <span class="fontCode">@type</span>, <span class="fontCode">id</span> or <span class="fontCode">@id</span>, <span class="fontCode">name</span>, <span class="fontCode">description</span>, <span class="fontCode">inLanguage</span>, and canonical JSON or HTML URLs such as <span class="fontCode">dataUrl</span>, <span class="fontCode">htmlUrl</span>, <span class="fontCode">url</span>, or <span class="fontCode">mainEntityOfPage</span>.</p>
+<p>Below is an example of an <span class="fontCode">index.json</span> manifest. The <span class="fontCode">resources</span> array points to secondary JSON files using a predictable structure.</p>
+<pre>
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "WebSiteManifest",
+  "id": "<strong>website-manifest</strong>",
+  "name": "<strong>Web Site Name</strong>",
+  "url": "<strong>https://www.example.com/</strong>",
+  "description": "<strong>This field should contain a clear and natural general description of the website, without being forced or over-optimized. The goal is to provide an overview of the content, service, or product offered, which will help artificial intelligence correctly categorize the site.</strong>",
+  "publisher": {
+    "@type": "<strong>Organization</strong>",
+    "name": "<strong>Organization Name</strong>",
+    "url": "<strong>https://www.example.com/</strong>",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "<strong>https://www.example.com/images/logos.jpg</strong>"
+    }
+  },
+  "inLanguage": "<strong>en</strong>",
+  "resources": [
+    {
+	  "id": "about-us",
+	  "type": "WebPage",
+	  "name": "<strong>About Us</strong>",
+	  "description": "<strong>Enter a brief description of the page's content here. This can be considered the equivalent of a meta description, useful for providing a concise and targeted summary for AI.</strong>",
+	  "dataUrl": "<strong>https://www.example.com/json/pages/about-us.json</strong>",
+	  "htmlUrl": "<strong>https://www.example.com/about-us/</strong>"
+	},
+	{
+	  "id": "services",
+	  "type": "ItemList",
+	  "name": "<strong>Services</strong>",
+	  "description": "<strong>If your website offers numerous services, the services.json file will contain a detailed list broken down into additional JSON files. Otherwise, simply enter a brief general description of the service offered.</strong>",
+	  "dataUrl": "<strong>https://www.example.com/json/services/index.json</strong>",
+	  "htmlUrl": "<strong>https://www.example.com/services/</strong>"
+	},
+	{
+	  "id": "contacts",
+	  "type": "ContactPage",
+	  "name": "<strong>Contacts</strong>",
+	  "description": "<strong>Enter a short description of the page content here.</strong>",
+	  "dataUrl": "<strong>https://www.example.com/json/pages/contacts.json</strong>",
+	  "htmlUrl": "<strong>https://www.example.com/contacts/</strong>"
+	}
+  ],
+  "discovery": {
+    "llmsTxt": "<strong>https://www.example.com/llms.txt</strong>",
+    "robotsTxt": "<strong>https://www.example.com/robots.txt</strong>",
+    "aiSitemap": "<strong>https://www.example.com/json/sitemap-ai.xml</strong>",
+    "apiEndpoint": "<strong>https://www.example.com/json/index.php</strong>"
+  },
+  "lastUpdated": "<strong>YYYY-MM-DD</strong>"
+}
+	</pre>
+<h3>Case of a list of services or products</h3>
+<p>If you have numerous subpages, such as services, products, categories, and news, create an AI Data Index list with <span class="fontCode">format</span> set to <span class="fontCode">ai-json</span>. Lists use <span class="fontCode">items</span>; each item points to its full JSON file and to the canonical human page.</p>
+<pre>
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "ItemList",
+  "id": "<strong>services</strong>",
+  "name": "<strong>Services</strong>",
+  "description": "<strong>Structured list of services offered by the website.</strong>",
+  "inLanguage": "<strong>en</strong>",
+  "items": [
+    {
+      "id": "<strong>service-one</strong>",
+      "type": "Service",
+      "name": "<strong>Name of service one</strong>",
+      "description": "<strong>Short summary of service one.</strong>",
+      "dataUrl": "<strong>https://www.example.com/json/services/service-one.json</strong>",
+      "htmlUrl": "<strong>https://www.example.com/services/service-one/</strong>"
+    },
+    {
+      "id": "<strong>service-two</strong>",
+      "type": "Service",
+      "name": "<strong>Name of service two</strong>",
+      "description": "<strong>Short summary of service two.</strong>",
+      "dataUrl": "<strong>https://www.example.com/json/services/service-two.json</strong>",
+      "htmlUrl": "<strong>https://www.example.com/services/service-two/</strong>"
+    }
+  ],
+  "lastUpdated": "<strong>YYYY-MM-DD</strong>"
+}
+	</pre>
+<h3>Structured single page</h3>
+<p>After creating the index.json file and any intermediate JSON listings, the main phase follows: creating final entity files in JSON-LD. These files can contain the full useful content of the page, including descriptions, images, FAQs, offers, properties, relations, and text summaries. Below is an example of a product page.</p>
+<p>It is important to remember to also include the URL of the related HTML page. In this way, if the artificial intelligence needs to indicate sources, it can refer to the specified URL.</p>
+<pre>
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "json-ld",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "<strong>Product</strong>",
+      "@id": "<strong>https://www.example.com/json/products/product-name.json</strong>",
+      "identifier": "<strong>product-name</strong>",
+      "name": "<strong>Product Name</strong>",
+      "description": "<strong>Product description</strong>",
+      "disambiguatingDescription": "<strong>product term definition</strong>",
+      "image": [
+        "<strong>https://www.example.com/images/product.jpg</strong>"
+      ],
+      "brand": {
+        "@type": "Organization",
+        "name": "<strong>Brand name</strong>",
+        "url": "<strong>https://www.example.com/</strong>"
+      },
+      "url": "<strong>https://www.example.com/url-product/</strong>",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "<strong>EUR</strong>",
+        "url": "<strong>https://www.example.com/url-product/</strong>"
+      },
+      "manufacturer": {
+        "@type": "<strong>Organization</strong>",
+        "name": "<strong>Company Name</strong>"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "<strong>Sku</strong>",
+          "value": "<strong>123abc</strong>"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "<strong>Value 1</strong>",
+          "value": "<strong>123</strong>"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "<strong>Value 2</strong>",
+          "value": "<strong>ABC</strong>"
+        }
+      ],
+      "mainEntityOfPage": "<strong>https://www.example.com/url-product/</strong>",
+      "inLanguage": "<strong>en</strong>",
+      "dateModified": "<strong>YYYY-MM-DD</strong>"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "<strong>https://www.example.com/json/products/product-name.json#faq</strong>",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "<strong>Write a FAQ question here</strong>",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<strong>Write the answer to the question here</strong>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "<strong>Write a FAQ question here</strong>",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<strong>Write the answer to the question here</strong>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "<strong>Write a FAQ question here</strong>",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<strong>Write the answer to the question here</strong>"
+          }
+        }
+      ],
+      "inLanguage": "<strong>en</strong>"
+    }
+  ]
+}
+
+	</pre>
+</section>
+<section id="m_multilingual">
+<h2>Multilingual websites</h2>
+<p>For multilingual websites, AI Data Index should distinguish between a global manifest and language-specific manifests. The global manifest, usually <span class="fontCode">/json/index.json</span>, describes the website as a whole and lists the available languages. Each language manifest, such as <span class="fontCode">/json/it/index.json</span> or <span class="fontCode">/json/en/index.json</span>, describes the localized structure for that language.</p>
+<p>A practical rule is: use separate language manifests where the website experience changes, such as navigation, pages, categories, and editorial paths. Use canonical entity files where only the translation of the same object changes, especially for large catalogs or large archives.</p>
+<p>Technical folder and file names should preferably use stable, language-neutral terms, commonly in English, such as <span class="fontCode">pages</span>, <span class="fontCode">categories</span>, <span class="fontCode">articles</span>, <span class="fontCode">products</span>, and <span class="fontCode">items</span>. Localized content should be expressed inside JSON fields and localized indexes, not in the technical path.</p>
+<pre>
+/json/
+├── index.json
+├── it/
+│   ├── index.json
+│   ├── pages.json
+│   ├── categories.json
+│   └── articles/
+│       ├── index.json
+│       └── pages/
+├── en/
+│   ├── index.json
+│   ├── pages.json
+│   ├── categories.json
+│   └── articles/
+│       ├── index.json
+│       └── pages/
+└── articles/
+    └── items/
+        ├── article-001.json
+        ├── article-002.json
+        └── article-5000.json
+</pre>
+<p>In this structure, localized folders contain lightweight indexes for discovery and navigation. The canonical article files remain in one shared folder and may contain all translations of the same article when those translations represent the same work.</p>
+<p>The main manifest can expose the available languages and point to the localized manifests:</p>
+<pre>
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "WebSiteManifest",
+  "id": "<strong>website-manifest</strong>",
+  "name": "<strong>Example Website</strong>",
+  "description": "<strong>Global AI Data Index manifest for the website.</strong>",
+  "url": "<strong>https://www.example.com/</strong>",
+  "inLanguage": ["it", "en", "fr"],
+  "availableLanguage": ["it", "en", "fr"],
+  "languageManifests": [
+    {
+      "inLanguage": "it",
+      "url": "<strong>https://www.example.com/json/it/index.json</strong>"
+    },
+    {
+      "inLanguage": "en",
+      "url": "<strong>https://www.example.com/json/en/index.json</strong>"
+    },
+    {
+      "inLanguage": "fr",
+      "url": "<strong>https://www.example.com/json/fr/index.json</strong>"
+    }
+  ],
+  "lastUpdated": "<strong>YYYY-MM-DD</strong>"
+}
+</pre>
+<h3>Large archives and repeated entities</h3>
+<p>When a website contains thousands of repeated entities, such as products, articles, companies, listings, or locations, it is usually better not to create a full JSON file for every entity in every language. This would multiply files unnecessarily and make maintenance harder.</p>
+<p>Instead, keep language-specific indexes lightweight and point them to one canonical entity file. The canonical file can contain neutral data, such as identifiers, dates, images, prices, authors, or relations, together with localized fields such as names, descriptions, URLs, and summaries.</p>
+<p>For large archives generated by a CMS or database, canonical file names should be stable and language-neutral. In WordPress, for example, a post can use <span class="fontCode">post-12345.json</span> and a WooCommerce product can use <span class="fontCode">product-98765.json</span>. This avoids changing the data URL when a title, slug, or translation changes.</p>
+<pre>
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "json-ld",
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "<strong>https://www.example.com/json/articles/items/post-12345.json</strong>",
+  "identifier": "post-12345",
+  "wpId": 12345,
+  "name": {
+    "it": "<strong>Come preparare i dati per l'intelligenza artificiale</strong>",
+    "en": "<strong>How to prepare data for artificial intelligence</strong>"
+  },
+  "headline": {
+    "it": "<strong>Come preparare i dati per l'intelligenza artificiale</strong>",
+    "en": "<strong>How to prepare data for artificial intelligence</strong>"
+  },
+  "description": {
+    "it": "<strong>Una guida pratica per rendere i contenuti piu comprensibili alle AI.</strong>",
+    "en": "<strong>A practical guide to making content easier for AI systems to understand.</strong>"
+  },
+  "articleBody": {
+    "it": "<strong>Testo completo dell'articolo in italiano...</strong>",
+    "en": "<strong>Full article text in English...</strong>"
+  },
+  "mainEntityOfPage": {
+    "it": "<strong>https://www.example.com/it/articoli/come-preparare-i-dati-ai/</strong>",
+    "en": "<strong>https://www.example.com/en/articles/how-to-prepare-ai-data/</strong>"
+  },
+  "inLanguage": ["it", "en"]
+}
+</pre>
+<p>If translated articles are faithful versions of the same work, a single multilingual canonical file is usually the cleanest solution. If each language version is editorially different, it is better to create separate files and connect them through properties such as <span class="fontCode">translationOfWork</span>, <span class="fontCode">workTranslation</span>, <span class="fontCode">sameAs</span>, and <span class="fontCode">mainEntityOfPage</span>.</p>
+<p>For small websites or a limited number of editorial pages, using file names based on the default language of the website is acceptable, for example <span class="fontCode">/json/pages/chi-siamo.json</span> on an Italian website. For large archives, however, stable IDs are preferable.</p>
+<p>For a website written in Italian, it is not necessary to replace the original content with English. The original language should remain present and aligned with the human page. English can be added as a useful support language for names, descriptions, summaries, and interoperability.</p>
+</section>
+<section id="m_api">
+<h2>API endpoint</h2>
+<p>At this preliminary stage, not all artificial intelligences are able to correctly access the content of JSON files due to limitations imposed by their web crawling tools. Often, the issue is related to restrictions imposed by firewalls or proxies.</p>
+<p>To overcome this difficulty, it is advisable to create a simple endpoint that directly returns the requested JSON file. The following example is in PHP, but you can create it using any programming language you prefer.</p>
+<pre>
+&lt;?php
+header('Content-Type: application/json');
+
+$jsonFile = __DIR__ . '/index.json';
+
+if (file_exists($jsonFile)) {
+    $jsonContent = file_get_contents($jsonFile);
+    echo $jsonContent;
+} else {
+    http_response_code(404);
+    echo json_encode(['error' => 'JSON file not found.']);
+}
+?&gt;
+	</pre>
+</section>
+<section id="m_llms">
+<h2>Large Language Models: llms.txt</h2>
+<p>At this initial stage, various developers are proposing alternative standards. This is not a competition: over time, artificial intelligence itself will determine which method proves to be the most effective.</p>
+<p>The <span class="fontCode">llms.txt</span> convention is still an emerging community proposal. In our case, we use it as a lightweight discovery file pointing to the AI Data Index manifest.</p>
+<p>This file should be placed in the root directory of the website, at the same level as the <span class="fontCode">robots.txt</span> file.</p>
+<p>The <span class="fontCode">llms.txt</span> file includes both explanatory comments directed at artificial intelligences and a list of the JSON files present in the <span class="fontCode">index.json</span> file.</p>
+<pre>
+# Example Website
+
+> AI-readable index of the website's structured content.
+
+## Structured Data
+
+- [AI Data Index manifest](https://www.example.com/json/index.json): Main machine-readable manifest for the website.
+- [About us](https://www.example.com/json/about-us.json): Structured data for the about page.
+- [Services](https://www.example.com/json/services.json): Structured list of services and related JSON files.
+- [Contacts](https://www.example.com/json/contacts.json): Structured contact information.
+	</pre>
+</section>
+<section id="m_sitemap">
+<h2>Secondary sitemap: sitemap-AI.xml</h2>
+<p>The <span class="fontCode">sitemap-ai.xml</span> file is intended to notify traditional search engine crawlers of the presence of structured JSON files. Currently, not all crawlers are able to correctly interpret the links between multiple JSON files, so this sitemap is not meant to index them but simply to notify their existence.</p>
+<p>Artificial intelligences could also use this file as a reference point.</p>
+<p>The file will contain a complete list of all JSON files present in the <span class="fontCode">/json/</span> folder and its subfolders.</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/index.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/about-us.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/services.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/contacts.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/services/name-of-service-one.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/services/name-of-service-two.json&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://www.example.com/json/services/name-of-service-three.json&lt;/loc&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;
+</pre>
+</section>
+<section id="m_robots">
+<h2>Instruction for bots: robots.txt</h2>
+<p>The <span class="fontCode">robots.txt</span> file is already considered by artificial intelligences when scanning websites. Through this file, we can also choose to completely exclude the site from being scanned by AIs.</p>
+<p>In addition to the standard instructions, it is possible to add an explicit reference to the <span class="fontCode">index.json</span> file, clearly indicating the presence of structured data.</p>
+<p>The goal, looking ahead, is for the <span class="fontCode">robots.txt</span> file alone to be sufficient to notify AIs of the existence and location of JSON files, eliminating the need for the <span class="fontCode">llms.txt</span> and <span class="fontCode">sitemap-ai.xml</span> files.</p>
+<p>Below is an example of the parameters to include in the file.</p>
+<pre>
+#Allow all bots to access the rest of the site
+
+User-agent: *
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /json/index.json
+
+User-agent: Google-Extended
+Allow: /json/index.json
+
+User-agent: Claude-Web
+Allow: /json/index.json
+
+User-agent: PerplexityBot
+Allow: /json/index.json
+
+User-agent: SoraBot
+Allow: /json/index.json
+
+User-agent: GPTBot
+Allow: /json/index.json
+
+User-agent: Anthropic-AI
+Allow: /json/index.json
+
+# AI-specific structured data entry points (non-standard extension fields)
+Sitemap: https://www.example.com/json/sitemap-ai.xml
+AI-Data: https://www.example.com/json/index.json
+AI-API Data: https://www.example.com/json/index.php
+AI-LLM: https://www.example.com/llms.txt
+</pre>
+</section>
+<section id="m_links">
+<h2>Trigger AI-based crawling</h2>
+<p>Even if we have already prepared a <span class="fontCode">robots.txt</span> file, it is good practice to include a direct link to the <span class="fontCode">index.json</span> file.</p>
+<p>Each artificial intelligence adopts different methods for web exploration, but an explicit link to the <span class="fontCode">index.json</span> file represents a common and easily recognizable reference for all.</p>
+<p>Below, we present two recommended methods for indicating the file: one to be included within the <span class="fontCode">&lt;head&gt;</span> tag and one to be included in the <span class="fontCode">&lt;body&gt;</span> of the page.</p>
+<h3>&lt;head&gt; of page</h3>
+<p>For AI bots capable of reading the contents of the <span class="fontCode">&lt;head&gt;</span> tag, it is advisable to explicitly insert the following code to facilitate the detection of structured data.</p>
+<pre>
+&lt;!-- AI-friendly structured data available at the following endpoint --&gt;
+&lt;link rel=&quot;alternate&quot; type=&quot;application/json&quot; href=&quot;https://www.example.com/json/index.json&quot; title=&quot;AI Manifest v1.1&quot;&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;ai-manifest&quot; data-ai=&quot;true&quot;&gt;
+  {
+    &quot;manifest_url&quot;: &quot;https://www.example.com/json/index.json&quot;
+  }
+&lt;/script&gt;
+</pre>
+<h3>&lt;body&gt; of page</h3>
+<p>Some AI-based bots, in their basic versions, analyze only the content present within the <span class="fontCode">&lt;body&gt;</span> tag.</p>
+<p>To ensure maximum compatibility, it is useful to insert a direct HTML link to the file, which can be either textual or represented by an image accompanied by a descriptive <span class="fontCode">alt</span> attribute.</p>
+<pre>
+//text link
+&lt;a href="https://www.example.com/json/index.json" target="_blank" title="AI Index Data"&gt;AI Data Index&lt;/a&gt;
+
+//image link
+&lt;a href="https://www.example.com/json/index.json" target="_blank"&gt;
+	&lt;img src="https://www.example.com/images/ai-json.png" alt="AI Data Index JSON" title="AI Data Index"&gt;
+&lt;/a&gt;
+</pre>
+</section>
+<section id="m_agent_setup">
+<h2>Agent setup file</h2>
+<p>This Markdown file is made for AI assistants and coding agents such as Codex, ChatGPT, Gemini, Claude, and similar tools. Give it to the AI before starting an integration: it explains the AI Data Index method, asks the right setup questions, and guides the creation of the required files.</p>
+<p>This file is the recommended starting point for AI-assisted integrations. Give it to an AI agent before creating, reviewing, or updating an AI Data Index implementation.</p>
+<p><a href="ai-data-index-agent-setup.md" download>Download AI Data Index agent setup (.md)</a></p>
+</section>
+<section id="m_examples">
+<h2>Integration examples</h2>
+<p>We have implemented several <strong>AI Data Index</strong> integrations across various websites. A significant example is its integration on <strong>Compra Diretto</strong>, a portal managing a database of agricultural businesses with related listings, a news section, and a products section, all interconnected through structured data.</p>
+<p>Below are some examples of publicly available JSON files:</p>
+<ul>
+<li><strong>Semantic homepage (index.json)</strong>: <a href="https://www.compradiretto.it/json/index.json" target="_blank">https://www.compradiretto.it/json/index.json</a></li>   
+<li><strong>Business directory</strong>: <a href="https://www.compradiretto.it/json/attivita.json" target="_blank">https://www.compradiretto.it/json/attivita.json</a></li>
+<li><strong>Listings</strong>: <a href="https://www.compradiretto.it/json/annunci.json" target="_blank">https://www.compradiretto.it/json/annunci.json</a></li> 
+<li><strong>News list</strong>: <a href="https://www.compradiretto.it/json/news.json" target="_blank">https://www.compradiretto.it/json/news.json</a></li>
+<li><strong>Product list</strong>: <a href="https://www.compradiretto.it/json/elenco-prodotti.json" target="_blank">https://www.compradiretto.it/json/elenco-prodotti.json</a></li>
+</ul>
+<h3>Regional Breakdown</h3>
+<p>For the <strong>business directory</strong>, a regional breakdown by Italian regions has been chosen to improve clarity and categorization for artificial intelligences. Here are some examples:</p>
+<ul>
+<li><a href="https://www.compradiretto.it/json/aziende-agricole-sicilia.json" target="_blank">Sicily</a></li>
+<li><a href="https://www.compradiretto.it/json/aziende-agricole-toscana.json" target="_blank">Tuscany</a></li>
+<li><a href="https://www.compradiretto.it/json/aziende-agricole-sardegna.json" target="_blank">Sardinia</a></li>
+<li>...</li>
+</ul>
+<p>Within these regional files, you will find <strong>JSON-LD files containing the actual business data</strong>, along with links to related listings and product sheets.</p>
+<p>To maintain a clean and easily navigable structure, individual company sheets are placed within dedicated subfolders <span class="fontCode">/json/companies/</span>, as in the following example: <br>
+<a href="https://www.compradiretto.it/json/companies/azienda-agricola-noro.json" target="_blank">https://www.compradiretto.it/json/companies/azienda-agricola-noro.json</a></p>
+<h3>Summary</h3>
+<p>This structure represents a practical example of <strong>AI Data Index applied to a complex portal</strong>, demonstrating how a large volume of data can be made easily interpretable for AIs in a clear and organized manner.</p>
+</section>
+<footer>
+<section class="footerLogo"> <a href="https://aidataindex.org/json/index.json" target="_blank" title="AI Index Data"><img src="images/logo.png" alt="AI Data Index"></a> </section>
+<section class="footerDev">
+<p>Developed by Marco De Rinaldis [<a href="mailto:dev@red-icon.com">contact</a>]<br>
+<i>Version 1.1</i><br>
+<i>Last update: 04-08-2026</i></p>
+</section>
+</footer>
+</main>
+</body>
+</html>

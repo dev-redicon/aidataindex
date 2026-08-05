@@ -24,8 +24,10 @@ Allow: /json/index.json
 User-agent: Anthropic-AI
 Allow: /json/index.json
 
-# AI-specific structured data entry points
-Sitemap: https://www.example.com/json/sitemap-ai.xml
-AI-Data: https://www.example.com/json/index.json
-AI-API Data: https://www.example.com/json/index.php
-AI-LLM: https://www.example.com/llms.txt
+Sitemap: https://aidataindex.org/sitemap.xml
+
+# AI-specific structured data entry points (non-standard extension fields)
+Sitemap: https://aidataindex.org/json/sitemap-ai.xml
+AI-Data: https://aidataindex.org/json/index.json
+AI-API Data: https://aidataindex.org/json/index.php
+AI-LLM: https://aidataindex.org/llms.txt

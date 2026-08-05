@@ -1,0 +1,126 @@
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "WebSiteManifest",
+  "id": "aidataindex-manifest",
+  "name": "AI Data Index",
+  "url": "https://aidataindex.org/",
+  "description": "AI Data Index is a practical open convention for publishing a machine-readable version of a website through JSON, JSON-LD, Schema.org, llms.txt, robots.txt, a dedicated AI sitemap, and explicit discovery links.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Data Index Project",
+    "url": "https://aidataindex.org/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aidataindex.org/images/logo.png"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "name": "Marco De Rinaldis",
+      "email": "dev@red-icon.com",
+      "contactType": "developer support",
+      "areaServed": "Worldwide",
+      "availableLanguage": ["en", "it"]
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Marco De Rinaldis"
+    },
+    "description": "Developed by Marco De Rinaldis - Last update: 04-08-2026 - dev@red-icon.com - Italy"
+  },
+  "inLanguage": "en",
+  "availableLanguage": ["en"],
+  "resources": [
+    {
+      "id": "what-is-ai-data-index",
+      "type": "WebPage",
+      "name": "What is AI Data Index",
+      "description": "This section explains the purpose and function of AI Data Index and how it helps AI systems collect and interpret structured website data.",
+      "dataUrl": "https://aidataindex.org/json/index.json#what-is-ai-data-index",
+      "htmlUrl": "https://aidataindex.org/#m_what"
+    },
+    {
+      "id": "integration",
+      "type": "WebPage",
+      "name": "AI Data Index Integration",
+      "description": "This section describes the integration phases, from JSON and JSON-LD files to API endpoints, robots.txt signals, and discovery links.",
+      "dataUrl": "https://aidataindex.org/json/index.json#integration",
+      "htmlUrl": "https://aidataindex.org/#m_integration"
+    },
+    {
+      "id": "structured-json",
+      "type": "WebPage",
+      "name": "Structured Data: JSON",
+      "description": "This section documents AI Data Index JSON and JSON-LD examples, including manifest, list, page, product, image, and FAQ structures.",
+      "dataUrl": "https://aidataindex.org/json/index.json#structured-json",
+      "htmlUrl": "https://aidataindex.org/#m_json"
+    },
+    {
+      "id": "multilingual-websites",
+      "type": "WebPage",
+      "name": "Multilingual Websites",
+      "description": "This section explains global manifests, localized manifests, language-neutral technical paths, and canonical entity files with internal translations for large archives.",
+      "dataUrl": "https://aidataindex.org/json/index.json#multilingual-websites",
+      "htmlUrl": "https://aidataindex.org/#m_multilingual"
+    },
+    {
+      "id": "api-endpoint",
+      "type": "WebPage",
+      "name": "API Endpoint",
+      "description": "This section describes optional endpoints that return JSON files directly, useful when crawling restrictions make static JSON files harder to retrieve.",
+      "dataUrl": "https://aidataindex.org/json/index.php",
+      "htmlUrl": "https://aidataindex.org/#m_api"
+    },
+    {
+      "id": "llms-txt",
+      "type": "DigitalDocument",
+      "name": "Large Language Models: llms.txt",
+      "description": "Discovery file that lists the main structured resources available on this website for AI agents and language models.",
+      "encodingFormat": "text/plain",
+      "dataUrl": "https://aidataindex.org/llms.txt",
+      "htmlUrl": "https://aidataindex.org/#m_llms"
+    },
+    {
+      "id": "sitemap-ai",
+      "type": "DigitalDocument",
+      "name": "Secondary Sitemap: sitemap-ai.xml",
+      "description": "Dedicated sitemap that notifies crawlers and AI agents about the available machine-readable structured files.",
+      "encodingFormat": "application/xml",
+      "dataUrl": "https://aidataindex.org/json/sitemap-ai.xml",
+      "htmlUrl": "https://aidataindex.org/#m_sitemap"
+    },
+    {
+      "id": "robots-txt",
+      "type": "DigitalDocument",
+      "name": "Instructions for Bots: robots.txt",
+      "description": "Robots file containing standard crawler signals and non-standard declarative AI discovery fields.",
+      "encodingFormat": "text/plain",
+      "dataUrl": "https://aidataindex.org/robots.txt",
+      "htmlUrl": "https://aidataindex.org/#m_robots"
+    },
+    {
+      "id": "discovery-links",
+      "type": "WebPage",
+      "name": "Trigger AI-Based Crawling",
+      "description": "This section explains explicit discovery links in the head and body of the website.",
+      "dataUrl": "https://aidataindex.org/json/index.json#discovery-links",
+      "htmlUrl": "https://aidataindex.org/#m_links"
+    },
+    {
+      "id": "agent-setup",
+      "type": "DigitalDocument",
+      "name": "AI Data Index Agent Setup",
+      "description": "Platform-neutral operational Markdown setup file for AI agents and assistants such as Codex, ChatGPT, Gemini, Claude, Perplexity, and other LLM-based tools.",
+      "encodingFormat": "text/markdown",
+      "dataUrl": "https://aidataindex.org/ai-data-index-agent-setup.md",
+      "htmlUrl": "https://aidataindex.org/#m_agent_setup"
+    }
+  ],
+  "discovery": {
+    "llmsTxt": "https://aidataindex.org/llms.txt",
+    "robotsTxt": "https://aidataindex.org/robots.txt",
+    "aiSitemap": "https://aidataindex.org/json/sitemap-ai.xml",
+    "apiEndpoint": "https://aidataindex.org/json/index.php"
+  },
+  "lastUpdated": "2026-08-04"
+}
