@@ -215,6 +215,7 @@ For a website written in Italian, it is not necessary to replace the original co
 | `index.json` | Example AI Data Index manifest using `format: "ai-json"` and `resources`. |
 | `category.json` | Example AI-readable list using `format: "ai-json"` and `items`. |
 | `page.json` | Example final entity file using `format: "json-ld"` and Schema.org. |
+| `multilingual-page.json` | Example multilingual canonical entity file with localized fields. |
 | `index.php` | Simple endpoint that returns the JSON manifest. |
 | `sitemap-ai.xml` | Dedicated sitemap for AI-readable structured files. |
 | `llms.txt` | LLM-oriented discovery file listing the main structured resources. |

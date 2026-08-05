@@ -20,6 +20,10 @@ https://www.example.com/json/pages/about.json
 https://www.example.com/json/services/index.json
 https://www.example.com/json/pages/contacts.json
 
+Example templates:
+https://www.example.com/page.json
+https://www.example.com/multilingual-page.json
+
 Recommended interpretation:
 - Files with `"format": "ai-json"` are manifests, lists, indexes, navigation, or relationship files.
 - Files with `"format": "json-ld"` are final semantic entities using Schema.org.
