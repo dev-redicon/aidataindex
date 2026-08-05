@@ -1,31 +1,34 @@
-#Allow all bots to access the rest of the site
+# Allow crawlers to access the public website and AI-readable resources.
 
 User-agent: *
 Allow: /
 
 User-agent: ChatGPT-User
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: Google-Extended
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: Claude-Web
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: PerplexityBot
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: SoraBot
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: GPTBot
-Allow: /json/index.json
+Allow: /json/
 
 User-agent: Anthropic-AI
-Allow: /json/index.json
+Allow: /json/
 
-# AI-specific structured data entry points
+# Standard sitemap discovery.
 Sitemap: https://www.example.com/json/sitemap-ai.xml
+
+# Declarative AI discovery fields.
+# These fields are non-standard and may be used by AI agents or custom crawlers.
 AI-Data: https://www.example.com/json/index.json
-AI-API Data: https://www.example.com/json/index.php
+AI-API-Data: https://www.example.com/json/index.php
 AI-LLM: https://www.example.com/llms.txt

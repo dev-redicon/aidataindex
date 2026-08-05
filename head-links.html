@@ -1,9 +1,14 @@
 <html>
   <head>
-    <link rel="alternate" type="application/json" href="https://example.com/json/index.json" title="AI Manifest v1.0">
+    <link rel="alternate" type="application/json" href="https://www.example.com/json/index.json" title="AI Data Index Manifest v1.1">
+    <link rel="sitemap" type="application/xml" href="https://www.example.com/json/sitemap-ai.xml" title="AI Data Index Sitemap">
     <script type="application/json" id="ai-manifest" data-ai="true">
       {
-        "manifest_url": "https://example.com/json/index.json"
+        "aiDataIndexVersion": "1.1",
+        "format": "ai-json",
+        "manifestUrl": "https://www.example.com/json/index.json",
+        "sitemapUrl": "https://www.example.com/json/sitemap-ai.xml",
+        "llmsTxtUrl": "https://www.example.com/llms.txt"
       }
     </script>
   </head>

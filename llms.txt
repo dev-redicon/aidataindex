@@ -1,6 +1,22 @@
-# llms.txt - AI index of machine-readable structured content
+# AI Data Index
 
+This website exposes a machine-readable AI Data Index. AI Data Index is a practical open convention, not an official universal web standard.
+
+Main manifest:
 https://www.example.com/json/index.json
-https://www.example.com/json/about-us.json
-https://www.example.com/json/services.json
-https://www.example.com/json/contacts.json
+
+API endpoint:
+https://www.example.com/json/index.php
+
+AI sitemap:
+https://www.example.com/json/sitemap-ai.xml
+
+Core structured resources:
+https://www.example.com/json/pages/home.json
+https://www.example.com/json/pages/about.json
+https://www.example.com/json/services/index.json
+https://www.example.com/json/pages/contacts.json
+
+Recommended interpretation:
+- Files with `"format": "ai-json"` are manifests, lists, indexes, navigation, or relationship files.
+- Files with `"format": "json-ld"` are final semantic entities using Schema.org.

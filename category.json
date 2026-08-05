@@ -1,17 +1,39 @@
 {
-    "name": "Services",
-    "hasPart": [
-        {
-            "name": "Name of service one",
-            "url": "https://www.example.com/json/services/name-of-service-one.json"
-        },
-        {
-            "name": "Name of service two",
-            "url": "https://www.example.com/json/services/name-of-service-one.two"
-        },
-        {
-            "name": "Name of service three",
-            "url": "https://www.example.com/json/services/name-of-service-three.json"
-        }
-    ]
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "ItemList",
+  "id": "services",
+  "name": "Services",
+  "description": "Example service index. Lists service entity files and their canonical human pages.",
+  "inLanguage": "en",
+  "items": [
+    {
+      "id": "service-one",
+      "type": "Service",
+      "name": "Service one",
+      "description": "Short description of service one.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/services/service-one.json",
+      "htmlUrl": "https://www.example.com/services/service-one/"
+    },
+    {
+      "id": "service-two",
+      "type": "Service",
+      "name": "Service two",
+      "description": "Short description of service two.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/services/service-two.json",
+      "htmlUrl": "https://www.example.com/services/service-two/"
+    },
+    {
+      "id": "service-three",
+      "type": "Service",
+      "name": "Service three",
+      "description": "Short description of service three.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/services/service-three.json",
+      "htmlUrl": "https://www.example.com/services/service-three/"
+    }
+  ],
+  "lastUpdated": "2026-08-04"
 }

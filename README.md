@@ -1,106 +1,149 @@
-# 🧠 AI Data Index
+# AI Data Index
 
-**AI Data Index** is an innovative system designed to simplify and optimize how artificial intelligences collect and interpret information from websites.
+**AI Data Index** is a practical open convention for publishing a machine-readable layer beside a human website.
 
-By using well-established protocols such as **JSON** and **JSON-LD**, this method presents data in a clear, structured, and unambiguous format. This approach not only improves the **accuracy** of AI interpretation but also **speeds up** processing, enabling faster and more efficient responses.
+It uses JSON, JSON-LD, Schema.org, `llms.txt`, `robots.txt`, a dedicated AI sitemap, and explicit discovery links to help AI systems, agents, crawlers, and language models understand website content with less ambiguity than raw HTML scraping.
 
----
+AI Data Index is not an officially adopted universal web standard. It should be presented as a simple, open, implementation-friendly convention that remains compatible with existing structured data practices.
 
-## 🚀 What Makes It Innovative
+## Core Idea
 
-The innovation lies not so much in the programming itself but in the **methodology**:  
-> A **parallel version of a website**, specifically designed to be read by artificial intelligences rather than humans.
+The core idea is a parallel version of a website, designed to be read by machines rather than humans.
 
-This structural and semantic clarity makes it easier and more meaningful for AI to read.
+The human website stays unchanged. The AI-readable layer is usually placed in:
 
-![AI Data Index Concept](https://github.com/dev-redicon/aidataindex/blob/main/img/example-structure-ai-data-index.jpg?raw=true)
-
-
----
-
-
-## 🛠️ How to Use
-
-To implement **AI Data Index** on your website, structure your files under your site's public folder (commonly named `public_html`, `www`, or the **root of your web server**), like this:
+```text
+/json/
 ```
-/ (🌐 root or public_html)
+
+The main entry point is:
+
+```text
+/json/index.json
+```
+
+Because AI discovery is still fragmented, AI Data Index recommends redundant signals:
+
+```text
+/json/index.json
+/json/index.php
+/json/sitemap-ai.xml
+/llms.txt
+/robots.txt
+head link rel="alternate"
+head script id="ai-manifest"
+body or footer link to /json/index.json
+```
+
+## Format Rule
+
+AI Data Index uses two levels:
+
+1. `ai-json` for manifests, indexes, lists, navigation, categories, paginated archives, and relationships.
+2. `json-ld` with Schema.org for final entities such as pages, articles, services, products, local businesses, organizations, people, FAQs, and contact pages.
+
+Every JSON file should declare its format when possible:
+
+```json
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "WebSiteManifest",
+  "id": "website-manifest",
+  "name": "Example Website",
+  "description": "Global AI Data Index manifest for the website.",
+  "inLanguage": "en"
+}
+```
+
+or:
+
+```json
+{
+  "aiDataIndexVersion": "1.1",
+  "format": "json-ld",
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.example.com/json/services/example-service.json",
+  "identifier": "example-service",
+  "name": "Example service",
+  "description": "Clear service description.",
+  "mainEntityOfPage": "https://www.example.com/services/example-service/",
+  "inLanguage": "en"
+}
+```
+
+## Recommended File Structure
+
+For a small website, start with:
+
+```text
+/ (root or public_html)
 ├── json/
-│ ├── index.json
-│ ├── index.php
-│ ├── sitemap-ai.xml
-│ ├── category.json
-│ ├── product/
-│ │ ├── product-1.json
-│ │ └── product-2.json
-│ ├── news/
-│ │ ├── news-1.json
-│ │ └── news-2.json
-│ └── page.json
+│   ├── index.json
+│   ├── index.php
+│   ├── sitemap-ai.xml
+│   ├── pages/
+│   │   ├── home.json
+│   │   ├── about.json
+│   │   └── contacts.json
+│   └── services/
+│       ├── index.json
+│       ├── service-one.json
+│       └── service-two.json
 ├── llms.txt
 ├── robots.txt
 ├── head-links.html
 └── body-links.html
 ```
-This structure allows **artificial intelligences and agents** to efficiently locate and interpret your structured data, enabling **fast, clear, and accurate indexing** of your website’s content.
 
+For very small sites, avoid over-engineering. A single manifest plus a few entity files is enough.
 
----
+## Project Files
 
-## 📂 Project Structure
+| File / Resource | Function |
+| --- | --- |
+| `index.json` | Example AI Data Index manifest using `format: "ai-json"` and `resources`. |
+| `category.json` | Example AI-readable list using `format: "ai-json"` and `items`. |
+| `page.json` | Example final entity file using `format: "json-ld"` and Schema.org. |
+| `index.php` | Simple endpoint that returns the JSON manifest. |
+| `sitemap-ai.xml` | Dedicated sitemap for AI-readable structured files. |
+| `llms.txt` | LLM-oriented discovery file listing the main structured resources. |
+| `robots.txt` | Standard crawler rules plus declared, non-standard AI discovery fields. |
+| `head-links.html` | Example discovery links to add in the HTML `<head>`. |
+| `body-links.html` | Example visible footer/body link to the AI manifest. |
 
-The system consists of a series of modular files, each with a specific function:
+## Baseline Fields
 
-| File / Resource         | Function |
-|--------------------------|----------|
-| `json/index.json`             | Semantic parallel homepage of the website, containing a map of contents and links readable by AI |
-| `json/category.json`          | Structure of categories and tags to help AI understand relationships between contents |
-| `json/page.json`              | Metadata and semantic properties related to individual pages or resources |
-| `json/index.php`       | PHP endpoint to dynamically serve JSON data to AIs and agents |
-| `json/sitemap-ai.xml`         | Sitemap dedicated to AI indexing, with semantic priorities and update frequencies |
-| `llms.txt`               | Placed in the site's root (like `robots.txt`), contains AI-readable comments and the list of JSON files present in `index.json`. |
-| `robots.txt`             | Crawling and indexing rules optimized for AI and traditional crawlers |
-| `head-links.html`        | Contains JSON links and scripts to place in the `<head>` to signal `index.json` to AI, facilitating structured data detection |
-| `body-links.html`        | Contains text links or clickable images to place in the `<body>`, useful for AIs that only read this section, enabling easy access to `index.json` |
+Use these fields consistently whenever they apply:
 
----
+- `aiDataIndexVersion`
+- `format`
+- `type` or `@type`
+- `id`, `identifier`, or `@id`
+- `name`
+- `description`
+- `inLanguage`
+- `dataUrl` for JSON file URLs in manifests, indexes, and lists
+- `htmlUrl`, `url`, or `mainEntityOfPage` for canonical human pages
+- `lastUpdated` or `dateModified`
 
-## 🧭 Project Status (June 2025)
+Use `resources` in the main manifest and `items` in lists or indexes.
 
-Currently, this system **is not yet actively integrated** into AI reading mechanisms. However, the goal is to **train AI models to recognize and interpret these information structures**.
+Final entity files may include rich content such as descriptions, images, FAQs, offers, authors, body text, localized fields, and Schema.org-specific properties.
 
-Many advanced AI systems have already confirmed that this approach is promising and can:
+## Robots.txt Note
 
-- **Reduce computational load**
-- **Improve information quality**
-- **Speed up interpretation**
+`Sitemap:` is a widely recognized robots.txt field.
 
-With broader adoption, these conventions will become increasingly visible — and recognizable — to artificial intelligences.
+Fields such as `AI-Data`, `AI-API-Data`, and `AI-LLM` are declarative, non-standard discovery fields. They may be useful to AI agents and custom crawlers, but they should not be described as official directives supported by all crawlers.
 
----
+## Website
 
-## 🤝 How to Contribute
+Official website:
 
-This repository is open to discussions, testing, and improvements.
+[https://aidataindex.org](https://aidataindex.org)
 
-You can contribute in several ways:
+## License
 
-- Submit suggestions via [Issues](https://github.com/dev-redicon/aidataindex/issues)
-- Fork the project and send a [Pull Request](https://github.com/dev-redicon/aidataindex/pulls)
-- Share real-world usage examples or integrations
-
----
-
-## 🌐 Website
-
-This repository accompanies the official website:  
-🔗 [https://aidataindex.org](https://aidataindex.org)
-
-The site is designed to demonstrate how to publish structured, AI-readable content.
-
----
-
-## 📄 License
-
-To be defined — suggestion: [MIT](LICENSE) or [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
-
----
+This repository uses the license included in [LICENSE](LICENSE).

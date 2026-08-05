@@ -1,58 +1,60 @@
 {
+  "aiDataIndexVersion": "1.1",
+  "format": "json-ld",
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Product",
-      "name": "Product Name",
-      "description": "Product description",
-      "disambiguatingDescription": "product term definition",
+      "@id": "https://www.example.com/json/products/example-product.json",
+      "identifier": "example-product",
+      "name": "Example product",
+      "description": "Clear product description written for both users and AI systems.",
+      "disambiguatingDescription": "Short definition that helps distinguish this product from similar products.",
+      "mainEntityOfPage": "https://www.example.com/products/example-product/",
       "image": [
-        "https://www.example.com/images/product.jpg"
+        "https://www.example.com/images/example-product.jpg"
       ],
       "brand": {
         "@type": "Organization",
-        "name": "Neme brand",
+        "name": "Example Brand",
         "url": "https://www.example.com/"
       },
-      "url": "https://www.example.com/url-product/",
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "EUR",
-        "url": "https://www.example.com/url-product/"
+        "url": "https://www.example.com/products/example-product/"
       },
       "manufacturer": {
         "@type": "Organization",
-        "name": "Company Name"
+        "name": "Example Company"
       },
       "additionalProperty": [
         {
           "@type": "PropertyValue",
-          "name": "Sku",
+          "name": "SKU",
           "value": "123abc"
         },
         {
           "@type": "PropertyValue",
-          "name": "Value 1",
-          "value": "123"
-        },
-        {
-          "@type": "PropertyValue",
-          "name": "Value 2",
-          "value": "ABC"
+          "name": "Example property",
+          "value": "Example value"
         }
       ],
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "dateModified": "2026-08-04"
     },
     {
       "@type": "FAQPage",
+      "@id": "https://www.example.com/json/products/example-product.json#faq",
+      "mainEntityOfPage": "https://www.example.com/products/example-product/",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "Write a FAQ question here",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Write the answer to the question here"
+            "text": "Write the answer to the question here."
           }
         },
         {
@@ -60,19 +62,12 @@
           "name": "Write a FAQ question here",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Write the answer to the question here"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Write a FAQ question here",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Write the answer to the question here"
+            "text": "Write the answer to the question here."
           }
         }
       ],
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "dateModified": "2026-08-04"
     }
   ]
 }

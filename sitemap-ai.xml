@@ -2,23 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.example.com/json/index.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>https://www.example.com/json/about-us.json</loc>
+    <loc>https://www.example.com/json/pages/home.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>https://www.example.com/json/services.json</loc>
+    <loc>https://www.example.com/json/pages/about.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>https://www.example.com/json/contacts.json</loc>
+    <loc>https://www.example.com/json/services/index.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>ttps://www.example.com/json/services/name-of-service-one.json</loc>
+    <loc>https://www.example.com/json/services/service-one.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>https://www.example.com/json/services/name-of-service-one.two</loc>
+    <loc>https://www.example.com/json/services/service-two.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
   <url>
-    <loc>https://www.example.com/json/services/name-of-service-three.json</loc>
+    <loc>https://www.example.com/json/services/service-three.json</loc>
+    <lastmod>2026-08-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.example.com/json/pages/contacts.json</loc>
+    <lastmod>2026-08-04</lastmod>
   </url>
 </urlset>

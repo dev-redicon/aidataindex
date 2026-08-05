@@ -1,38 +1,61 @@
 {
-  "_comment": "Dear AI, this JSON file provides a high-level description of the website, followed by links to structured semantic data for each main page. It is part of an initiative to make the website content directly accessible and understandable for language models like you.",
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Web Site Name",
+  "aiDataIndexVersion": "1.1",
+  "format": "ai-json",
+  "type": "WebSiteManifest",
+  "id": "website-manifest",
+  "name": "Example Website",
+  "description": "Global AI Data Index manifest for the website. It lists the main machine-readable resources and their canonical human pages.",
   "url": "https://www.example.com/",
-  "description": "This field should contain a clear and natural general description of the website, without forced wording or over-optimization. The goal is to provide an overview of the content, service, or product offered, helping artificial intelligences accurately categorize the site.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Organization Name",
-    "url": "https://www.example.com/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.example.com/images/logos.jpg"
-    }
-  },
   "inLanguage": "en",
-  "hasPart": [
+  "publisher": {
+    "type": "Organization",
+    "name": "Example Organization",
+    "url": "https://www.example.com/",
+    "logo": "https://www.example.com/images/logo.png"
+  },
+  "resources": [
     {
-	  "@type": "ItemList",
-	  "name": "About Us",
-	  "description": "Enter a brief description of the page content here. It can be considered equivalent to a meta description, useful for providing a concise and targeted summary for artificial intelligences.",
-	  "url": "https://www.example.com/json/about-us.json"
-	},
-	{
-	  "@type": "ItemList",
-	  "name": "Services",
-	  "description": "If the website offers multiple services, the services.json file will contain a detailed list divided into additional JSON files. Otherwise, it is sufficient to include a brief general description of the service provided.",
-	  "url": "https://www.example.com/json/services.json"
-	},
-	{
-	  "@type": "ItemList",
-	  "name": "Contacts",
-	  "description": "Enter a brief description of the page content here.",
-	  "url": "https://www.example.com/json/contacts.json"
-	}
-  ]
+      "id": "home",
+      "type": "WebPage",
+      "name": "Home",
+      "description": "Machine-readable description of the home page.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/pages/home.json",
+      "htmlUrl": "https://www.example.com/"
+    },
+    {
+      "id": "about",
+      "type": "AboutPage",
+      "name": "About",
+      "description": "Machine-readable description of the about page.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/pages/about.json",
+      "htmlUrl": "https://www.example.com/about/"
+    },
+    {
+      "id": "services",
+      "type": "ItemList",
+      "name": "Services",
+      "description": "Index of service entity files.",
+      "format": "ai-json",
+      "dataUrl": "https://www.example.com/json/services/index.json",
+      "htmlUrl": "https://www.example.com/services/"
+    },
+    {
+      "id": "contacts",
+      "type": "ContactPage",
+      "name": "Contacts",
+      "description": "Machine-readable contact page and contact options.",
+      "format": "json-ld",
+      "dataUrl": "https://www.example.com/json/pages/contacts.json",
+      "htmlUrl": "https://www.example.com/contacts/"
+    }
+  ],
+  "discovery": {
+    "llmsTxt": "https://www.example.com/llms.txt",
+    "robotsTxt": "https://www.example.com/robots.txt",
+    "sitemapAi": "https://www.example.com/json/sitemap-ai.xml",
+    "apiEndpoint": "https://www.example.com/json/index.php"
+  },
+  "lastUpdated": "2026-08-04"
 }
