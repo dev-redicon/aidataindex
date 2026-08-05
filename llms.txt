@@ -11,6 +11,9 @@ https://www.example.com/json/index.php
 AI sitemap:
 https://www.example.com/json/sitemap-ai.xml
 
+Agent setup:
+https://www.example.com/ai-data-index-agent-setup.md
+
 Core structured resources:
 https://www.example.com/json/pages/home.json
 https://www.example.com/json/pages/about.json
