@@ -5,14 +5,31 @@
   "@graph": [
     {
       "@type": "Product",
-      "@id": "https://www.example.com/json/products/example-product.json",
-      "identifier": "example-product",
-      "name": "Example product",
-      "description": "Clear product description written for both users and AI systems.",
-      "disambiguatingDescription": "Short definition that helps distinguish this product from similar products.",
-      "mainEntityOfPage": "https://www.example.com/products/example-product/",
+      "@id": "https://www.example.com/json/products/items/product-12345.json",
+      "identifier": "product-12345",
+      "sku": "12345",
+      "name": {
+        "it": "Prodotto di esempio",
+        "en": "Example product",
+        "fr": "Produit d'exemple"
+      },
+      "description": {
+        "it": "Descrizione chiara del prodotto scritta per utenti e sistemi di intelligenza artificiale.",
+        "en": "Clear product description written for both users and AI systems.",
+        "fr": "Description claire du produit redigee pour les utilisateurs et les systemes d'intelligence artificielle."
+      },
+      "disambiguatingDescription": {
+        "it": "Definizione breve che aiuta a distinguere questo prodotto da prodotti simili.",
+        "en": "Short definition that helps distinguish this product from similar products.",
+        "fr": "Definition courte qui aide a distinguer ce produit de produits similaires."
+      },
+      "mainEntityOfPage": {
+        "it": "https://www.example.com/it/prodotti/prodotto-di-esempio/",
+        "en": "https://www.example.com/en/products/example-product/",
+        "fr": "https://www.example.com/fr/produits/produit-exemple/"
+      },
       "image": [
-        "https://www.example.com/images/example-product.jpg"
+        "https://www.example.com/images/products/product-12345.jpg"
       ],
       "brand": {
         "@type": "Organization",
@@ -23,7 +40,7 @@
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
         "priceCurrency": "EUR",
-        "url": "https://www.example.com/products/example-product/"
+        "url": "https://www.example.com/en/products/example-product/"
       },
       "manufacturer": {
         "@type": "Organization",
@@ -33,40 +50,60 @@
         {
           "@type": "PropertyValue",
           "name": "SKU",
-          "value": "123abc"
+          "value": "12345"
         },
         {
           "@type": "PropertyValue",
-          "name": "Example property",
-          "value": "Example value"
+          "name": "Canonical data file",
+          "value": "Shared multilingual entity file"
         }
       ],
-      "inLanguage": "en",
+      "inLanguage": ["it", "en", "fr"],
       "dateModified": "2026-08-04"
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.example.com/json/products/example-product.json#faq",
-      "mainEntityOfPage": "https://www.example.com/products/example-product/",
+      "@id": "https://www.example.com/json/products/items/product-12345.json#faq",
+      "mainEntityOfPage": {
+        "it": "https://www.example.com/it/prodotti/prodotto-di-esempio/",
+        "en": "https://www.example.com/en/products/example-product/",
+        "fr": "https://www.example.com/fr/produits/produit-exemple/"
+      },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Write a FAQ question here",
+          "name": {
+            "it": "Questo prodotto e disponibile in piu lingue?",
+            "en": "Is this product available in multiple languages?",
+            "fr": "Ce produit est-il disponible en plusieurs langues ?"
+          },
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Write the answer to the question here."
+            "text": {
+              "it": "Si. Questo file JSON-LD usa un unico identificatore stabile e contiene campi localizzati per ogni lingua.",
+              "en": "Yes. This JSON-LD file uses one stable identifier and contains localized fields for each language.",
+              "fr": "Oui. Ce fichier JSON-LD utilise un identifiant stable unique et contient des champs localises pour chaque langue."
+            }
           }
         },
         {
           "@type": "Question",
-          "name": "Write a FAQ question here",
+          "name": {
+            "it": "Quando conviene usare un file canonico multilingua?",
+            "en": "When should a multilingual canonical file be used?",
+            "fr": "Quand faut-il utiliser un fichier canonique multilingue ?"
+          },
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Write the answer to the question here."
+            "text": {
+              "it": "Conviene quando le traduzioni rappresentano lo stesso prodotto, articolo o servizio e cambiano solo i contenuti localizzati.",
+              "en": "Use it when translations represent the same product, article, or service and only localized content changes.",
+              "fr": "Utilisez-le lorsque les traductions representent le meme produit, article ou service et que seuls les contenus localises changent."
+            }
           }
         }
       ],
-      "inLanguage": "en",
+      "inLanguage": ["it", "en", "fr"],
       "dateModified": "2026-08-04"
     }
   ]
